@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import io from "socket.io-client";
 
-const socket = io('http://localhost:3010');
 
 
 function Tweets(props) {
@@ -17,19 +15,7 @@ function Tweets(props) {
     const handleSubmit = (e) => {
         e.preventDefault()
         // console.log('input', input)
-        setTweets([])
 
-        axios.get(`http://localhost:3010/tweets?source=${input}`)
-            .then(tweet => {
-                console.log('response', tweet.data)
-                setinput('')
-            })
-            .catch(err => alert(err))
-
-        socket.on('tweet', function (data) {
-            console.log('tweet', data)
-            setTweets(tweets => [...tweets, data]);
-        })
 
     }
 
