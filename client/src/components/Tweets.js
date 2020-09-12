@@ -20,6 +20,9 @@ function Tweets(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
+        // put all tokens and credentials in .env file
+        // all the tokens and credentials are revoked, so you have to make your own twitter developer account
 
         // getting the token
         // curl - u '881flbXb16SbwdP3R2sRKvdji:1lgXzKUdWoMzdvba4r1YEY7gAEXqlMOSRMq99Iz7mUM2nNikFi' \
